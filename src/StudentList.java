@@ -140,6 +140,12 @@ public class StudentList implements Serializable{
             return true;
         }catch (NullPointerException e){
             System.out.println("\n"+ e);
+            System.out.println("Press enter to continue...");
+            try {
+                String c = new Scanner(System.in).nextLine();
+            } catch (Exception e1) {
+                e1.printStackTrace();
+            }
             return false;
         }
     }

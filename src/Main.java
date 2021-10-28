@@ -91,7 +91,7 @@ public class Main {
                                     String fileS=scanner.nextLine();
                                     ffSave=new File(FileSystems.getDefault().getPath("txtFileFolder").toAbsolutePath()
                                             .toString()+"\\" +fileS);
-                                    if (ffSave.exists()){
+                                    if (ffSave.isFile()&&ffSave.exists()){
                                         System.out.println("File ton tai!!! Ban muon ghi de hay tao file moi?");
                                         System.out.println("Nhap 1 de ghi de, nhap 2 de tao file moi");
                                         System.out.print("Moi nhap: ");
@@ -111,13 +111,14 @@ public class Main {
                                 if (ffSave.getPath().toString().endsWith("txt"))
                                 {stl.writeFileTxt(ffSave.getPath());
                                     System.out.println("Save thanh cong!");
-                                    System.out.println("Press enter to continue...");
-                                    try {
-                                        String c = new Scanner(System.in).nextLine();
-                                    } catch (Exception e) {
-                                        e.printStackTrace();
-                                    }}
+                                    }
                                 else System.out.println("File khong phai dang txt. Save that bai!!!");
+                                System.out.println("Press enter to continue...");
+                                try {
+                                    String c = new Scanner(System.in).nextLine();
+                                } catch (Exception e) {
+                                    e.printStackTrace();
+                                }
                                 break;
                             case 8:
                                 System.out.print("Nhap ten file csv muon export(VD: clc.csv): ");
@@ -126,7 +127,7 @@ public class Main {
                                     String fileExp=scanner.nextLine();
                                     ffExport=new File(FileSystems.getDefault().getPath("csvFileFolder").toAbsolutePath()
                                             .toString()+"\\" +fileExp);
-                                    if (ffExport.exists()){
+                                    if (ffExport.isFile()&&ffExport.exists()){
                                         {
                                             System.out.println("File ton tai!!! Ban muon ghi de hay tao file moi?");
                                             System.out.println("Nhap 1 de ghi de, nhap 2 de tao file moi");
@@ -147,14 +148,14 @@ public class Main {
                                 }
                                 if (ffExport.getPath().toString().endsWith("csv"))
                                 {stl.exportFileCSV(ffExport.getPath());
-                                    System.out.println("Export thanh cong!");
-                                    System.out.println("Press enter to continue...");
-                                    try {
-                                        String c = new Scanner(System.in).nextLine();
-                                    } catch (Exception e) {
-                                        e.printStackTrace();
-                                    }}
+                                    System.out.println("Export thanh cong!");}
                                 else System.out.println("File khong phai dang csv. Save that bai!!!");
+                                System.out.println("Press enter to continue...");
+                                try {
+                                    String c = new Scanner(System.in).nextLine();
+                                } catch (Exception e) {
+                                    e.printStackTrace();
+                                }
                                 break;
                         }
                         cls();
@@ -237,7 +238,7 @@ public class Main {
                                     String fileS=scanner.nextLine();
                                     ffSave=new File(FileSystems.getDefault().getPath("txtFileFolder").toAbsolutePath()
                                             .toString()+"\\" +fileS);
-                                    if (ffSave.exists()){
+                                    if (ffSave.isFile()&&ffSave.exists()){
                                         System.out.println("File ton tai!!! Ban muon ghi de hay tao file moi?");
                                         System.out.println("Nhap 1 de ghi de, nhap 2 de tao file moi");
                                         System.out.print("Moi nhap: ");
@@ -257,13 +258,14 @@ public class Main {
                                 if (ffSave.getPath().toString().endsWith("txt"))
                                 {stl.writeFileTxt(ffSave.getPath());
                                 System.out.println("Save thanh cong!");
-                                    System.out.println("Press enter to continue...");
-                                    try {
-                                        String c = new Scanner(System.in).nextLine();
-                                    } catch (Exception e) {
-                                        e.printStackTrace();
-                                    }}
+                                  }
                                 else System.out.println("File khong phai dang txt. Save that bai!!!");
+                                System.out.println("Press enter to continue...");
+                                try {
+                                    String c = new Scanner(System.in).nextLine();
+                                } catch (Exception e) {
+                                    e.printStackTrace();
+                                }
                                 break;
                             case 8:
                                 System.out.print("Nhap ten file csv muon export(VD: clc.csv): ");
@@ -272,7 +274,7 @@ public class Main {
                                     String fileExp=scanner.nextLine();
                                     ffExport=new File(FileSystems.getDefault().getPath("csvFileFolder")
                                             .toAbsolutePath().toString()+"\\" +fileExp);
-                                    if (ffExport.exists()){
+                                    if (ffExport.isFile()&&ffExport.exists()){
                                         System.out.println("File ton tai!!! Ban muon ghi de hay tao file moi?");
                                         System.out.println("Nhap 1 de ghi de, nhap 2 de tao file moi");
                                         System.out.print("Moi nhap: ");
@@ -292,13 +294,14 @@ public class Main {
                                 if (ffExport.getPath().toString().endsWith("csv"))
                                 {stl.exportFileCSV(ffExport.getPath());
                                     System.out.println("Export thanh cong!");
-                                    System.out.println("Press enter to continue...");
-                                    try {
-                                        String c = new Scanner(System.in).nextLine();
-                                    } catch (Exception e) {
-                                        e.printStackTrace();
-                                    }}
+                                    }
                                 else System.out.println("File khong phai dang csv. Save that bai!!!");
+                                System.out.println("Press enter to continue...");
+                                try {
+                                    String c = new Scanner(System.in).nextLine();
+                                } catch (Exception e) {
+                                    e.printStackTrace();
+                                }
                                 break;
                         }
                         cls();
@@ -381,7 +384,7 @@ public class Main {
                                     String fileS=scanner.nextLine();
                                     ffSave=new File(FileSystems.getDefault().getPath("txtFileFolder").toAbsolutePath()
                                             .toString()+"\\" +fileS);
-                                    if (ffSave.exists()){
+                                    if (ffSave.isFile()&&ffSave.exists()){
                                         System.out.println("File ton tai!!! Ban muon ghi de hay tao file moi?");
                                         System.out.println("Nhap 1 de ghi de, nhap 2 de tao file moi");
                                         System.out.print("Moi nhap: ");
@@ -401,13 +404,14 @@ public class Main {
                                 if (ffSave.getPath().toString().endsWith("txt"))
                                 {stl.writeFileTxt(ffSave.getPath());
                                     System.out.println("Save thanh cong!");
-                                    System.out.println("Press enter to continue...");
-                                    try {
-                                        String c = new Scanner(System.in).nextLine();
-                                    } catch (Exception e) {
-                                        e.printStackTrace();
-                                    }}
+                                    }
                                 else System.out.println("File khong phai dang txt. Save that bai!!!");
+                                System.out.println("Press enter to continue...");
+                                try {
+                                    String c = new Scanner(System.in).nextLine();
+                                } catch (Exception e) {
+                                    e.printStackTrace();
+                                }
                                 break;
                             case 8:
                                 System.out.print("Nhap ten file csv muon export(VD: clc.csv): ");
@@ -416,7 +420,7 @@ public class Main {
                                     String fileExp=scanner.nextLine();
                                     ffExport=new File(FileSystems.getDefault().getPath("csvFileFolder").toAbsolutePath()
                                             .toString()+"\\" +fileExp);
-                                    if (ffExport.exists()){
+                                    if (ffExport.isFile()&&ffExport.exists()){
                                         System.out.println("File ton tai!!! Ban muon ghi de hay tao file moi?");
                                         System.out.println("Nhap 1 de ghi de, nhap 2 de tao file moi");
                                         System.out.print("Moi nhap: ");
@@ -436,13 +440,14 @@ public class Main {
                                 if (ffExport.getPath().toString().endsWith("csv"))
                                 {stl.exportFileCSV(ffExport.getPath());
                                     System.out.println("Export thanh cong!");
-                                    System.out.println("Press enter to continue...");
-                                    try {
-                                        String c = new Scanner(System.in).nextLine();
-                                    } catch (Exception e) {
-                                        e.printStackTrace();
-                                    }}
+                                 }
                                 else System.out.println("File khong phai dang csv. Save that bai!!!");
+                                System.out.println("Press enter to continue...");
+                                try {
+                                    String c = new Scanner(System.in).nextLine();
+                                } catch (Exception e) {
+                                    e.printStackTrace();
+                                }
                                 break;
                         }
                         cls();
