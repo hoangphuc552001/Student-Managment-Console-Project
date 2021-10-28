@@ -16,7 +16,7 @@ public class Main {
     public static void main(String[] args) throws IOException {
         Scanner scanner=new Scanner(System.in);
         boolean exit=false;
-        StudentList stl=new StudentList();
+        StudentList stl;
         Main _main= new Main();
         while(!exit){
             _main.printHeader();
@@ -38,6 +38,7 @@ public class Main {
                     System.out.println("Cam on da su dung.");
                     break;
                 case 1:
+                    stl=new StudentList();
                     boolean exit3=false;
                     while(!exit3){
                         System.out.println("\nSu lua chon");
@@ -107,14 +108,16 @@ public class Main {
                                     }
                                     else break;
                                 }
-                                stl.writeFileTxt(ffSave.getPath());
-                                System.out.println("Save thanh cong!");
-                                System.out.println("Press enter to continue...");
-                                try {
-                                    String c = new Scanner(System.in).nextLine();
-                                } catch (Exception e) {
-                                    e.printStackTrace();
-                                }
+                                if (ffSave.getPath().toString().endsWith("txt"))
+                                {stl.writeFileTxt(ffSave.getPath());
+                                    System.out.println("Save thanh cong!");
+                                    System.out.println("Press enter to continue...");
+                                    try {
+                                        String c = new Scanner(System.in).nextLine();
+                                    } catch (Exception e) {
+                                        e.printStackTrace();
+                                    }}
+                                else System.out.println("File khong phai dang txt. Save that bai!!!");
                                 break;
                             case 8:
                                 System.out.print("Nhap ten file csv muon export(VD: clc.csv): ");
@@ -142,20 +145,23 @@ public class Main {
                                     }
                                     else break;
                                 }
-                                stl.exportFileCSV(ffExport.getPath());
-                                System.out.println("Export thanh cong!");
-                                System.out.println("Press enter to continue...");
-                                try {
-                                    String c = new Scanner(System.in).nextLine();
-                                } catch (Exception e) {
-                                    e.printStackTrace();
-                                }
+                                if (ffExport.getPath().toString().endsWith("csv"))
+                                {stl.exportFileCSV(ffExport.getPath());
+                                    System.out.println("Export thanh cong!");
+                                    System.out.println("Press enter to continue...");
+                                    try {
+                                        String c = new Scanner(System.in).nextLine();
+                                    } catch (Exception e) {
+                                        e.printStackTrace();
+                                    }}
+                                else System.out.println("File khong phai dang csv. Save that bai!!!");
                                 break;
                         }
                         cls();
                     }
                     break;
                 case 2:
+                    stl=new StudentList();
                     System.out.println("\nCac file csv ton tai sau:");
                     String[] pathnames1;
                     Path path1 = FileSystems.getDefault().getPath("txtFileFolder").toAbsolutePath();
@@ -299,6 +305,7 @@ public class Main {
                     }
                     break;
                 case 3:
+                    stl=new StudentList();
                     System.out.println("\nCac file csv ton tai sau:");
                     String[] pathnames;
                     Path path = FileSystems.getDefault().getPath("csvFileFolder").toAbsolutePath();

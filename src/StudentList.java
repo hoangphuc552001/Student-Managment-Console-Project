@@ -354,7 +354,6 @@ public class StudentList implements Serializable{
     public void readFileTxt(String txt) throws IOException {
         FileInputStream file=null;
         ObjectInputStream inputStream=null;
-        this.listStudent=new ArrayList<Student>();
         try {
             file = new FileInputStream(txt);
             inputStream= new ObjectInputStream(file);
@@ -432,19 +431,27 @@ public class StudentList implements Serializable{
     public void importFileCSV(String file) throws IOException {
         BufferedReader reader=null;
         String line="";
-        this.listStudent=new ArrayList<Student>();
         try{
             reader=new BufferedReader(new FileReader(file));
             String rm=reader.readLine();
             while ((line=reader.readLine())!=null){
                 String[] row=line.split(",");
                 try{
-                    Student st=new Student(row[1],
+                    Student st;
+                    if (row.length==7){
+                        st=new Student(row[1],
                             row[2],
                             Float.parseFloat(row[3]),
                             row[4],
                             row[5],
-                            row[6]);
+                            row[6]);}
+                    else {
+                        st=new Student(row[1],
+                                row[2],
+                                Float.parseFloat(row[3]),
+                                row[4],
+                                row[5],
+                                "");}
                     if (checkStudent(st.getStudentID())==null)
                         this.listStudent.add(st);}catch (NumberFormatException nfe){
                     nfe.printStackTrace();
